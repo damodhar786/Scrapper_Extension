@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Scraper</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .output-column {
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .output-column:hover {
+      background-color: #f0f8ff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <header class="bg-primary text-white text-center py-2">
+      <h1>Web Scraper</h1>
+    </header>
+
+    <main class="my-5 container text-center">
+
+      <form id="scraperForm">
+        <div class="mb-3">
+          <label for="url" class="form-label">URL to Scrape</label>
+          <input type="url" class="form-control" id="url" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Scrape</button>
+      </form>
+
+      <div class="mt-3">
+        <h2>Scraped Data</h2>
+        <div class="row">
+          <div class="col-12 col-md-4">
+            <table class="table table-bordered table-striped output-column" data-toggle="modal"
+              data-target="#dataModal">
+              <thead class="thead-light">
+                <tr>
+                  <td colspan="3" class="text-center font-weight-bold">Collecting data from Sections</td>
+                </tr>
+                <tr>
+                  <th>#</th>
+                  <th>Column 1</th>
+                  <th>Column 2</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Data 1.1</td>
+                  <td>Data 1.2</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Data 2.1</td>
+                  <td>Data 2.2</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Data 3.1</td>
+                  <td>Data 3.2</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Data 4.1</td>
+                  <td>Data 4.2</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Data 5.1</td>
+                  <td>Data 5.2</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-12 col-md-4">
+            <table class="table table-bordered table-striped output-column" data-toggle="modal"
+              data-target="#dataModal">
+              <thead class="thead-light">
+                <tr>
+                  <td colspan="3" class="text-center font-weight-bold">Collecting Data from DIVs</td>
+                </tr>
+                <tr>
+                  <th>#</th>
+                  <th>Column 1</th>
+                  <th>Column 2</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Data 1.1</td>
+                  <td>Data 1.2</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Data 2.1</td>
+                  <td>Data 2.2</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Data 3.1</td>
+                  <td>Data 3.2</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Data 4.1</td>
+                  <td>Data 4.2</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Data 5.1</td>
+                  <td>Data 5.2</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-12 col-md-4">
+            <table class="table table-bordered table-striped output-column" data-toggle="modal"
+              data-target="#dataModal">
+              <thead class="thead-light">
+                <tr>
+                  <td colspan="3" class="text-center font-weight-bold">Collecting Data from Lists</td>
+                </tr>
+                <tr>
+                  <th>#</th>
+                  <th>Column 1</th>
+                  <th>Column 2</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Data 1.1</td>
+                  <td>Data 1.2</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Data 2.1</td>
+                  <td>Data 2.2</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Data 3.1</td>
+                  <td>Data 3.2</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Data 4.1</td>
+                  <td>Data 4.2</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Data 5.1</td>
+                  <td>Data 5.2</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="mt-3 text-center py-2">
+          <button class="btn btn-primary">Next</button>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-dark text-white text-center py-1 container">
+      <p>&copy; 2024 Web Scraper. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="dataModal" tabindex="-1" role="dialog" aria-labelledby="dataModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="dataModalLabel">Collect Data</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered table-striped">
+            <thead class="thead-light">
+              <tr>
+                <th>#</th>
+                <th>Column 1</th>
+                <th>Column 2</th>
+              </tr>
+            </thead>
+            <tbody id="modalTableBody">
+              <!-- Data will be inserted here dynamically -->
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="copyTableToExcel()">Copy to Excel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.output-column').on('click', function () {
+        var tableContent = $(this).find('tbody').html();
+        $('#modalTableBody').html(tableContent);
+      });
+    });
+
+    function copyTableToExcel() {
+      var table = document.getElementById("modalTableBody").parentNode;
+      var tableHTML = table.outerHTML.replace(/ /g, '%20');
+
+      var downloadLink = document.createElement("a");
+      document.body.appendChild(downloadLink);
+      downloadLink.href = 'data:application/vnd.ms-excel,' + tableHTML;
+      downloadLink.download = 'scraped_data.xls';
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+    }
+  </script>
+</body>
+
+</html>
